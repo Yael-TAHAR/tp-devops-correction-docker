@@ -16,4 +16,6 @@ jobs:
           java-version: "21"
           distribution: temurin
       - name: Build and test with Maven
-        run: mvn clean verify
+        run: |
+          cd backend/simpleapi
+          mvn clean verify
