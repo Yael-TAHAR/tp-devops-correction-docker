@@ -17,5 +17,5 @@ jobs:
           distribution: temurin
       - name: Build and test with Maven
         run: |
-          cd backend/simpleapi
+          cd simpleapi
           mvn clean verify
