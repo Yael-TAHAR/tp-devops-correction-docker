@@ -23,6 +23,9 @@ jobs:
         working-directory: ./simple-api
         run: mvn clean verify
 
+      - name: SonarCloud Analysis
+        run : mvn -B verify sonar:sonar -Dsonar.projectKey=Yael-TAHAR_tp-devops-correction-docker -Dsonar.organization=yael-tahar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
+
 
   build-and-push-docker-image:
     needs: test-backend
